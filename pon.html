@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieBox - Accueil</title>
+    <link rel="stylesheet" href="STYLE.css">
+</head>
+<body>
+    <!-- Arrière-plan animé avec slider -->
+    <div class="bg-slider">
+        <div class="slide active" style="background-image: url('spiderman.jpg');"></div>
+        <div class="slide" style="background-image: url('avatar.jpg');"></div>
+        <div class="slide" style="background-image: url('mario-kart.jpg');"></div>
+        <div class="slide" style="background-image: url('minions.jpg');"></div>
+        <div class="slide" style="background-image: url('reine-des-neiges.jpg');"></div>
+    </div>
+
+    <!-- Overlay violet et noir -->
+    <div class="overlay"></div>
+
+    <!-- Effet de particules -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="content">
+        <header>
+            <h1>🎬 MovieBox</h1>
+            <p>Découvrez vos films et séries préférés</p>
+        </header>
+
+        <!-- Grille d'images cliquables -->
+        <section class="movies-grid">
+            <!-- Carte 1: Spider-Man -->
+            <div class="movie-card" 
+                 data-title="Spider-Man" 
+                 data-description="Un jeune lycéen nommé Peter Parker découvre qu'il a des pouvoirs surhumains après avoir été mordu par une araignée génétiquement modifiée. Il décide d'utiliser ses nouveaux pouvoirs pour combattre le crime et protéger les innocents de New York.">
+                <img src="image/spiderman_homecoming_ver11_xlg__scaled_800.jpg" alt="Spider-Man">
+                <h3>Spider-Man</h3>
+            </div>
+
+            <!-- Carte 2: Avatar -->
+            <div class="movie-card" 
+                 data-title="Avatar" 
+                 data-description="Jake Sully, un marine paralysé, participe à un programme sur une planète lointaine appelée Pandora. Il se retrouve au cœur d'un conflit entre les humains et les Na'vi, les habitants autochtones de la planète.">
+                <img src="image/AVATAR.jpg" alt="Avatar">
+                <h3>Avatar</h3>
+            </div>
+
+            <!-- Carte 3: Mario Kart -->
+            <div class="movie-card" 
+                 data-title="Mario Kart" 
+                 data-description="Une course de karting endiablée avec les personnages emblématiques de l'univers Mario. Mario, Luigi, Peach, Bowser et bien d'autres s'affrontent sur des circuits pleins de pièges et de power-ups.">
+                <img src="image/mario.jpg" alt="Mario Kart">
+                <h3>Mario Kart</h3>
+            </div>
+
+            <!-- Carte 4: Les Minions -->
+            <div class="movie-card" 
+                 data-title="Les Minions" 
+                 data-description="De petites créatures jaunes et espiègles appelées Minions ont toujours été au service du plus grand méchant de l'histoire. Découvrez leurs aventures hilarantes et leurs bêtises sans fin.">
+                <img src="image/les mignons.jpeg" alt="Les Minions">
+                <h3>Les Minions</h3>
+            </div>
+
+            <!-- Carte 5: La Reine des Neiges -->
+            <div class="movie-card" 
+                 data-title="La Reine des Neiges" 
+                 data-description="Elsa, une jeune princesse, doit apprendre à maîtriser ses pouvoirs magiques de glace et de neige pour sauver son royaume d'Arendelle. Sa sœur Anna l'aide dans cette quête épique.">
+                <img src="image/Personnages-de-la-reine-des-neiges.jpg" alt="La Reine des Neiges">
+                <h3>La Reine des Neiges</h3>
+            </div>
+
+            <!-- Carte 6: One Piece -->
+            <div class="movie-card" 
+                 data-title="One Piece" 
+                 data-description="Monkey D. Luffy et son équipage de pirates partent à la recherche du trésor légendaire One Piece afin de devenir le Roi des Pirates. Une aventure épique pleine de combats et d'amitié.">
+                <img src="image/one-piece-opening-24-straw-hats.jpg" alt="One Piece">
+                <h3>One Piece</h3>
+            </div>
+
+            <!-- Carte 7: Dragon Ball -->
+            <div class="movie-card" 
+                 data-title="Dragon Ball" 
+                 data-description="Goku, un jeune guerrier à la queue de singe, part à la recherche des 7 Dragon Balls. En chemin, il rencontre des amis et affronte des ennemis de plus en plus puissants.">
+                <img src="image/DRAGON BALL Z.jpg" alt="Dragon Ball">
+                <h3>Dragon Ball</h3>
+            </div>
+
+            <!-- Carte 8: Naruto -->
+            <div class="movie-card" 
+                 data-title="Naruto" 
+                 data-description="Naruto Uzumaki, un jeune ninja, rêve de devenir Hokage, le chef de son village. Malgré les préjugés, il s'entraîne dur pour devenir le ninja le plus puissant.">
+                <img src="image/naruto-shippuden-konoha-eleven.jpg" alt="Naruto">
+                <h3>Naruto</h3>
+            </div>
+        </section>
+    </div>
+
+    <!-- Fenêtre modale -->
+    <div class="modal" id="movieModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div class="modal-action">
+                <a href="#" class="modal-btn">Regarder maintenant</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!-- Section Vidéo -->
+<section class="video-section">
+    <div class="section-header">
+        <h2>🎥 Bandes-annonces</h2>
+        <p>Découvrez les dernières bandes-annonces en exclusivité</p>
+    </div>
+
+    <div class="video-grid">
+        <!-- Vidéo 1 -->
+        <div class="video-card">
+            <div class="video-thumbnail"?v=7QX7wPqf708" class="video-link">
+                 <a href="https://www.youtube.com/watch?v=7QX7wPqf708" class="video-link">
+                <img src="spiderman-video-thumb.jpg" alt="Spider-Man Bande-annonce">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" width="80" height="80">
+                        <circle cx="12" cy="12" r="11" fill="rgba(157, 78, 221, 0.8)" stroke="#c77dff" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>Spider-Man: No Way Home</h3>
+                <p>Bande-annonce officielle</p>
+                <span class="duration">2:45</span>
+            </div>
+        </div>
+        <!-- Vidéo 2 -->
+        <div class="video-card">
+            <div class="video-thumbnail">
+                <a href="https://www.youtube.com/watch?v=3wSUg_Bc7OM" class="video-link">
+                <img src="image/AVATAR.jpg" alt="Avatar Bande-annonce">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" width="80" height="80">
+                        <circle cx="12" cy="12" r="11" fill="rgba(157, 78, 221, 0.8)" stroke="#c77dff" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>Avatar: The Way of Water</h3>
+                <p>Bande-annonce officielle</p>s
+                <span class="duration">3:12</span>
+            </div>
+        </div>
+
+        <!-- Vidéo 3 -->
+        <div class="video-card">
+            <div class="video-thumbnail">
+             <a href="https://www.youtube.com/watch?v=H7Thgo_5A7c" class="video-link">
+
+                <img src="image/les mignons.jpeg" alt="Minions Bande-annonce">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" width="80" height="80">
+                        <circle cx="12" cy="12" r="11" fill="rgba(157, 78, 221, 0.8)" stroke="#c77dff" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>Les Minions 2</h3>
+                <p>Bande-annonce VF</p>
+                <span class="duration">2:30</span>
+            </div>
+        </div>
+
+        <!-- Vidéo 4 -->
+        <div class="video-card">
+            <div class="video-thumbnail">
+                <!-- comment inserer un url video youtube sur mon site  -->
+                <a href="https://www.youtube.com/watch?v=ORDnEtU3MtY" class="video-link">
+                    <!--fin  -->
+                <img src="image/mario.jpg" alt="Naruto Bande-annonce">
+                <div class="play-btn">
+                    <svg viewBox="0 0 24 24" width="80" height="80">
+                        <circle cx="12" cy="12" r="11" fill="rgba(157, 78, 221, 0.8)" stroke="#c77dff" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="video-info">
+                <h3>Naruto: Next Generations</h3>
+                <p>Nouvelle saison</p>
+                <span class="duration">1:58</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modale pour lecteur vidéo -->
+<div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+        <span class="video-close-btn" onclick="closeVideoModal()">&times;</span>
+        <div class="video-player">
+            <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h3 id="videoTitle"></h3>
+    </div>
+</div>
